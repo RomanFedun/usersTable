@@ -45,7 +45,6 @@
         "no-unused-expressions": "error",
         "id-blacklist": [
           "error",
-          "any",
           "Number",
           "String",
           "string",

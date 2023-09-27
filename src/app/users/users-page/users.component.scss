@@ -1,0 +1,28 @@
+.error-section {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  width: 100%;
+  height: 100px;
+}
+
+.placeholder {
+  text-align: center;
+  font-size: larger;
+}
+
+.content {
+  display: flex;
+  margin-top: 15px;
+
+  table-list {
+    min-width: 55%;
+    width: 100%;
+  }
+
+  auxiliary-content {
+    width: 45%;
+    height: max-content;
+    padding-top: 50px;
+  }
+}

@@ -1,0 +1,22 @@
+<main class="main-content">
+  <div class="button-container">
+    <app-button
+      [buttonText]="'Create User'"
+      (clickEvent)="clickBtn()"
+    ></app-button>
+  </div>
+  <div class="main-content__wrapper">
+    <table class="table">
+      <thead class="table__thead">
+        <tr class="table__head_tr">
+          <th class="table__thead_th" *ngFor="let header of TableHeaders">{{header | fromCamelCase | uppercase}}</th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+        <tr class="tbody__tr" *ngFor="let item of tableValues; index as i" (click)="rowClick(tableContent[i])">
+          <td class="tbody__td" *ngFor="let field of item">{{ field }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>

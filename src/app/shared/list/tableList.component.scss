@@ -1,0 +1,49 @@
+:host {
+  .main-content {
+    padding: 0 10px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: end;
+  }
+
+  .main-content__wrapper {
+    background: rgb(255, 255, 255);
+    padding-bottom: 40px;
+    border-radius: 5px;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+  }
+
+  .table__head_tr, .tbody__tr {
+    margin-bottom: 2px;
+  }
+
+  .table__thead_th, .tbody__td {
+    padding-left: 20px ;
+  }
+
+  .tbody__td {
+    color: #575757;
+  }
+
+  .table__head_tr {
+    background: rgb(255, 255, 255);
+    height: 40px;
+
+    .table__thead_th {
+      color: #a1a0a0;
+      text-align: left;
+    }
+  }
+
+  .tbody__tr {
+    background: rgba(208, 206, 206, 0.16);
+    height: 40px;
+  }
+}

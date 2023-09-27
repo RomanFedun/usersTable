@@ -1,0 +1,16 @@
+:host {
+  .toast {
+    width: 230px;
+    height: 8px;
+    background: #7fd97f;
+    border-radius: 5px;
+    margin: 0 10px;
+    padding: 20px 0;
+    font-size: 12px;
+
+    .toast__message {
+      color: rgb(255, 255, 255);
+      margin: 10px 20px;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+<div *ngIf="(isToast$ | async)?.mess as message"
+  class="toast" #toast>
+  <span class="toast__message">{{message}}</span>
+</div>

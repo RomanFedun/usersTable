@@ -1,0 +1,17 @@
+:host {
+  .close-button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .close-button__img {
+      margin: auto 10px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<section class="error-section">
+  <app-toast
+    *ngIf="(toast$ | async)?.succ"
+    [background]="'#ea3e80'"
+  ></app-toast>
+  <app-toast *ngIf="!(toast$ | async)?.succ"></app-toast>
+</section>
+
+<div class="placeholder" *ngIf="!(usersList$ | async)?.length">
+  <span>Create first content</span>
+</div>
+
+<div class="content">
+  <table-list
+    [tableContent$]="usersList$"
+    [TableHeaders]="defaultHeaders"
+    (clickButton)="buttonClick()"
+    (clickRow)="rowClick($event)"
+    ></table-list>
+  <auxiliary-content *ngIf="!isUsersPage"></auxiliary-content>
+</div>

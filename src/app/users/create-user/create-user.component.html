@@ -1,0 +1,95 @@
+<div class="container">
+  <form class="container__form" [formGroup]="form" (submit)="onSubmit()">
+
+    <div class="form__wrapper">
+      <header class="header">
+        <h4>{{header}}</h4>
+        <app-close-button (clickEvent)="onClose()"></app-close-button>
+      </header>
+
+      <label class="form__label" for="userName">Username*</label>
+      <input class="input" type="email" id="userName" formControlName="userName">
+      <span class="warning" *ngIf="form.get('userName')?.hasError('userNameExists') && form.controls['userName']?.touched  && !editMode">
+        userName already exists
+      </span>
+      <span class="warning" *ngIf="form.get('userName')?.hasError('required') && form.controls['userName']?.touched">
+        Field required
+      </span>
+
+      <label class="form__label" for="first-name">
+        First name*
+      </label>
+      <input class="input" type="text" id="first-name" formControlName="firstName">
+      <span class="warning" *ngIf="form.get('firstName')?.hasError('required') && form.controls['firstName']?.touched">
+        Field required
+      </span>
+
+      <label class="form__label" for="last-name">
+        Last name*
+      </label>
+      <input class="input" type="text" id="last-name" formControlName="lastName">
+      <span class="warning" *ngIf="form.get('lastName')?.hasError('required') && form.controls['lastName']?.touched">
+        Field required
+      </span>
+
+      <label class="form__label" for="email">Email*</label>
+      <input class="input" type="email" id="email" formControlName="email">
+      <span class="warning" *ngIf="form.get('email')?.hasError('emailAlreadyExists') && !editMode">
+        Email already exists
+      </span>
+      <span class="warning" *ngIf="form.get('email')?.hasError('email')">
+        Should be email
+      </span>
+      <span class="warning" *ngIf="form.get('email')?.hasError('required') && form.controls['email']?.touched">
+        Field required
+      </span>
+
+      <label class="form__label" for="type">Type*</label>
+      <select class="input" id="type" formControlName="type">
+        <option></option>
+        <option *ngFor="let type of types">{{type}}</option>
+      </select>
+      <span class="warning" *ngIf="form.get('type')?.hasError('required') && form.controls['type']?.touched">
+        Field required
+      </span>
+
+      <label class="form__label" for="password">
+        Password*
+      </label>
+      <input class="input" type="password" id="password" formControlName="password">
+      <span class="warning" *ngIf="form.get('password')?.hasError('required') && form.controls['password']?.touched">
+        Field required
+      </span>
+      <span class="warning" *ngIf="form.get('password')?.hasError('minlength')">
+        minimum 8 symbols
+      </span>
+      <span class="warning" *ngIf="form.get('password')?.hasError('pattern')">
+        at least one number and one letter
+      </span>
+
+      <label class="form__label" for="repeatPassword">
+        Repeat password*
+      </label>
+      <input class="input" type="password" id="repeatPassword" formControlName="repeatPassword">
+      <span class="warning" *ngIf="form.get('repeatPassword')?.hasError('required') && form.controls['repeatPassword']?.touched">
+        Field required
+      </span>
+      <span class="warning" *ngIf="form?.hasError('PasswordNoMatch') && form.controls['repeatPassword']?.touched">
+        pass not matches
+      </span>
+    </div>
+
+    <button *ngIf="!editMode" type="submit" class="button-submit" [disabled]="form.invalid">Create</button>
+
+    <div *ngIf="editMode" class="edit-delete-button">
+      <app-button
+        (clickEvent)="deleteUser()"
+        [buttonText]="'Delete'"
+        [background]="'#ea3e80'"></app-button>
+      <app-button
+        (clickEvent)="editUser()"
+        [buttonText]="'Save'"
+      ></app-button>
+    </div>
+  </form>
+</div>
