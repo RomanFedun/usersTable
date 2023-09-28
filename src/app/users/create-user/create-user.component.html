@@ -47,7 +47,7 @@
       <label class="form__label" for="type">Type*</label>
       <select class="input" id="type" formControlName="type">
         <option></option>
-        <option *ngFor="let type of types">{{type}}</option>
+        <option *ngFor="let type of types" [value]="type">{{type}}</option>
       </select>
       <span class="warning" *ngIf="form.get('type')?.hasError('required') && form.controls['type']?.touched">
         Field required
