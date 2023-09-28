@@ -7,7 +7,7 @@
         <app-close-button (clickEvent)="onClose()"></app-close-button>
       </header>
 
-      <label class="form__label" for="userName">Username*</label>
+      <label class="form__label" for="userName">Username* </label>
       <input class="input" type="email" id="userName" formControlName="userName">
       <span class="warning" *ngIf="form.get('userName')?.hasError('userNameExists') && form.controls['userName']?.touched  && !editMode">
         userName already exists
