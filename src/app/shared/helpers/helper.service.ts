@@ -22,8 +22,6 @@ export class HelperService {
         const users = this.usersService.users$.getValue();
         const isUserNameExists = users.find(item => item.userName === userName);
 
-        return of(!!isUserNameExists).pipe(
-            delay(3000)
-        );
+        return of(!!isUserNameExists);
     }
 }
